@@ -1,6 +1,6 @@
 package com.hy.note.test03;
 
-import com.hy.note.ArrUtil;
+import java.util.Random;
 
 public class Test03 {
     public static void main(String[] args) {
@@ -11,9 +11,15 @@ public class Test03 {
             N的范围：0~最大索引
          */
 
-        int[] arr = {3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48};
+        int[] arr = new int[100000];
+        Random r =new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = r.nextInt();
+        }
+        long start = System.currentTimeMillis();
         sort(arr);
-        ArrUtil.printArr(arr);
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
     }
 
     public static void sort(int[] arr) {
@@ -28,7 +34,6 @@ public class Test03 {
         if (startIndex == -1) {
             return;
         }
-        System.out.println(startIndex);
         //2.遍历从startIndex开始到最后一个元素，依次得到无序的哪一组数据中的每一个元素
         for (int i = startIndex; i < arr.length; i++) {
             //把遍历到的元素 arr[i] 插入的有序序列中

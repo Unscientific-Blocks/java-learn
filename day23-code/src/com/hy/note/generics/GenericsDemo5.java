@@ -10,9 +10,14 @@ public class GenericsDemo5 {
         ArrayList<Ye> list1 = new ArrayList<>();
         ArrayList<Fu> list2 = new ArrayList<>();
         ArrayList<Zi> list3 = new ArrayList<>();
-//        method(list1);
-//        method(list2);
-//        method(list3);
+
+//        泛型不具备继承性
+//        泛型方法中定义了一个类型，在调用这个方法时，只能传递这个类型的参数，不能传递其子类或父类的类型
+//        因此有了泛型的通配符 ? extents fu  |  ? super zi
+
+        method(list1);
+        method(list2);
+        method(list3);
 
         list1.add(new Ye());
         list1.add(new Fu());
